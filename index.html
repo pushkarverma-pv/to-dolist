@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple todo list that saves your tasks locally.">
+  <title>dailyto-dos | Todo list</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="dailyto-dos home">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span>dailyto-dos</span>
+      </a>
+      <span class="save-status" id="save-status" role="status">Saved locally</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Your little corner of order</p>
+      <h1 id="page-title">Make room for<br><em>what matters.</em></h1>
+      <p class="intro-copy">Capture the next thing, then let the rest wait its turn.</p>
+    </section>
+
+    <section class="todo-panel" aria-label="Todo list">
+      <form class="add-form" id="add-form">
+        <label class="sr-only" for="todo-input">Add a new task</label>
+        <input id="todo-input" name="todo" type="text" maxlength="120" placeholder="What needs doing?" autocomplete="off" required>
+        <button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button>
+      </form>
+
+      <div class="list-toolbar">
+        <div class="list-heading">
+          <span class="section-kicker">Today</span>
+          <span class="task-count" id="task-count">0 tasks</span>
+        </div>
+        <button class="clear-button" id="clear-completed" type="button">Clear completed</button>
+      </div>
+
+      <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon" aria-hidden="true">✦</div>
+        <h2>Nothing on the list yet</h2>
+        <p>Add a task above and make your day feel a little lighter.</p>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Your tasks stay on this device.</span>
+    </footer>
+  </main>
+</body>
+</html>
